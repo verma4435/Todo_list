@@ -14,7 +14,10 @@ export let UserSchema:Schema = new Schema({
 
 UserSchema.pre<IUserModel>("save", function(next){
     let user = this;
-    user.createdAt = new Date();
+    if(!user.createdAt) {
+        user.createdAt = new Date();
+    }
+    user.updatedAt = new Date();
     next();
 });
 

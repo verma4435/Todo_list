@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import ejs from "ejs";
+import engine from "ejs-locals";
 import path from "path";
 import { IndexRouter } from "./routes/index";
 import { config } from "./config/config";
@@ -31,6 +31,7 @@ class App {
         this.app.use(bodyParser.json());
 
         //view engine setup
+        this.app.engine('ejs', engine);
         this.app.set('view engine', 'ejs')
 
         //router setup

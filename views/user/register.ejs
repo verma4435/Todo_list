@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link type="text/css" rel='stylesheet' href='/css/materialize-css/dist/css/materialize.css' />
-    <link rel='stylesheet' type='text/css' href='/style.css' />
-</head>
-<body>
-    <div class='card-panel teal lighten-2'>
-        <h1 class="bg-test">hi there</h1>
+<% layout('../base.ejs') -%>
+
+<div class="card">
+    <div class="row">
+        <form action="/register" class="col s12" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" name="userName" id="userName" class="validate">
+                    <label for="userName">User Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="password" name="password" id="password" class="validate">
+                    <label for='password'>password</label>
+                </div>
+                <div>
+                    <button type="submit">submit</button>
+                    <button type="reset">reset</button>
+                </div>
+            </div>
+        </form>
     </div>
-</body>
-</html>
+</div>
